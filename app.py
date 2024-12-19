@@ -54,7 +54,7 @@ with tab1:
         # Weight vs Target Weight plot
         fig, ax = plt.subplots()
         ax.plot(merged_data['Date'], merged_data['Target Weight'], label='Target Weight', linestyle='--', color='blue')
-        ax.plot(merged_data['Date'], merged_data['Weight'], marker='o', label='Actual Weight', color='red')
+        ax.plot(merged_data['Date'], merged_data['Weight'], label='Actual Weight', color='red')
         ax.set_xlabel("Date")
         ax.set_ylabel("Weight (kg)")
         ax.set_title("Weight vs. Target Weight Over Time")
