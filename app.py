@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
+import numpy as np
 
 # File to store logged data
 DATA_FILE = "data.csv"
@@ -53,7 +54,13 @@ with tab1:
 
         # Weight vs Target Weight plot
         fig, ax = plt.subplots()
-        ax.plot(merged_data['Date'], merged_data['Target Weight'], label='Target Weight', linestyle='--', color='blue')
+        ax.plot(
+            merged_data['Date'],
+            merged_data['Target Weight'],
+            label='Target Weight',
+            linestyle='--',
+            color='blue'
+        )
         ax.plot(merged_data['Date'], merged_data['Weight'], label='Actual Weight', color='red')
         ax.set_xlabel("Date")
         ax.tick_params(axis='x', labelrotation=90)
@@ -64,7 +71,12 @@ with tab1:
 
         # Calorie Deficit bar chart
         fig, ax = plt.subplots()
-        ax.bar(merged_data['Date'], merged_data['Deficit'], label='Calorie Deficit', color='green')
+        ax.bar(
+            merged_data['Date'],
+            merged_data['Deficit'],
+            label='Calorie Deficit',
+            color=np.where(merged_data['Deficit'] < 0, 'crimson', 'deepskyblue')
+        )
         ax.axhline(0, color='black', linewidth=0.8, linestyle='--')
         ax.set_xlabel("Date")
         ax.tick_params(axis='x', labelrotation=90)
