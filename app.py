@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import numpy as np
 from openai import OpenAI
-import os
+# import os
 # from config import OPENAI_KEY
 
 # Set your OpenAI API key
-os.environ['OPENAI_KEY'] = st.secrets['OPENAI_KEY']
+# os.environ['OPENAI_KEY'] = st.secrets['OPENAI_KEY']
 
-client = OpenAI(api_key=os.getenv('OPENAI_KEY'))
+client = OpenAI(api_key=st.secrets['OPENAI_KEY'])
 
 # File to store logged data
 DATA_FILE = "data.csv"
