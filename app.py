@@ -89,29 +89,29 @@ with tab1:
 
 # Tab 2: Data Logging
 with tab2:
-    st.header("Log Your Data")
+    # st.header("Log Your Data")
 
-    # Input fields for logging data
-    date = st.date_input("Date", value=datetime.today())
-    weight = st.number_input("Weight (kg)", min_value=0.0, step=0.1)
-    calories = st.number_input("Calories Consumed", min_value=0, step=1)
-    deficit = st.number_input("Calorie Deficit", step=1)
-    steps = st.number_input("Steps", min_value=0, step=1)
-    workout = st.text_area("Workout Description")
+    # # Input fields for logging data
+    # date = st.date_input("Date", value=datetime.today())
+    # weight = st.number_input("Weight (kg)", min_value=0.0, step=0.1)
+    # calories = st.number_input("Calories Consumed", min_value=0, step=1)
+    # deficit = st.number_input("Calorie Deficit", step=1)
+    # steps = st.number_input("Steps", min_value=0, step=1)
+    # workout = st.text_area("Workout Description")
 
     # Add new entry
-    if st.button("Add Entry"):
-        new_row = pd.DataFrame({
-            'Date': [date],
-            'Weight': [weight],
-            'Calories': [calories],
-            'Deficit': [deficit],
-            'Steps': [steps],
-            'Workout': [workout]
-        })
-        logged_data = pd.concat([logged_data, new_row], ignore_index=True)
-        save_data(logged_data)
-        st.success("Entry added successfully!")
+    # if st.button("Add Entry"):
+    #     new_row = pd.DataFrame({
+    #         'Date': [date],
+    #         'Weight': [weight],
+    #         'Calories': [calories],
+    #         'Deficit': [deficit],
+    #         'Steps': [steps],
+    #         'Workout': [workout]
+    #     })
+    #     logged_data = pd.concat([logged_data, new_row], ignore_index=True)
+    #     save_data(logged_data)
+    #     st.success("Entry added successfully!")
 
     # Display logged data
     st.subheader("Logged Data")
